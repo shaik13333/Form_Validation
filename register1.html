@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="" method="get">
+     <input type="text" id="userName" placeholder="Enter Here" name="userName" required pattern=""> <br>
+     <input type="password" id="password" placeholder="Enter Here" name="password" required><br>
+     <button id="regBut">Register</button>
+     <h3>Account already Exists <a href="http://127.0.0.1:5500/validation_task/login.html">Login</a></h3>
+   </form>
+   <script>
+      let button = document.getElementById("regBut");
+      button.addEventListener("click",()=>{
+        let username = document.getElementById("userName").value;
+        let password = document.getElementById("password").value;
+
+        window.sessionStorage.setItem("user_name",username);
+        window.sessionStorage.setItem("password",password);
+
+        // window.open("http://127.0.0.1:5501/login.html");
+      })
+   </script>
+</body>
+</html>

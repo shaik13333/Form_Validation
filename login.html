@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <input type="username" placeholder="username" name="username" id="usern" value=""><br>
+        <input type="password" placeholder="password" name="password" id="pass" value=""><br>
+        <input type="submit" value="login" id="login">
+        <h3>New User <a href="register1.html">Register</a> </h3>
+        
+
+        <script>
+            let btnLogin = document.getElementById("login");
+            btnLogin.addEventListener("click",(e)=>{
+                // e.preventDefault();
+                let x = document.getElementById("usern").value;
+                let y = document.getElementById("pass").value;
+                let regName = window.sessionStorage.getItem("user_name");
+                let regpass = window.sessionStorage.getItem("password");
+                if(x===regName && y===regpass){
+                    window.open("home.html")
+                }
+                else{
+                    alert("invalid credentials")
+                }
+                
+            });
+        </script>
+    </form>
+</body>
